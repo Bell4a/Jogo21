@@ -2,7 +2,7 @@ package TrabalhoFinal;
 
 import java.util.Scanner;
 
-public class Jogo21 {
+public class SoMain {
 
 
 
