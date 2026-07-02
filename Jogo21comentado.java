@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Jogo21 {
+public class Jogo21comentado {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
@@ -45,8 +45,8 @@ public class Jogo21 {
                 int posicao = teclado.nextInt();
 
                 // Valida se a carta já foi escolhida nesta rodada
-                while (cartasUsadas[posicao]) {
-                    System.out.println("Essa posicao ja foi escolhida! Escolha outra.");
+                while (posicao < 0 || posicao > 51 || cartasUsadas[posicao]) {
+                    System.out.println("Essa posicao ja foi escolhida ou está fora dos limites! Escolha outra.");
                     System.out.print("Informe a posicao da carta (0 a 51): ");
                     posicao = teclado.nextInt();
                 }
