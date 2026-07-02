@@ -114,9 +114,9 @@ public class Jogo21 {
             int pos1 = (int) (Math.random() * 52);
             int pos2 = (int) (Math.random() * 52);
 
-            int temp = baralho[pos1];
+            int aux = baralho[pos1];
             baralho[pos1] = baralho[pos2];
-            baralho[pos2] = temp;
+            baralho[pos2] = aux;
         }
     }
 
