@@ -20,15 +20,14 @@ public class correcao {
         int opcao = 0;
 
         while (opcao != 3) {
-            System.out.println("\n|    * JOGO 21 *    |");
-            System.out.println("1 - Virar carta");
-            System.out.println("2 - Parar partida");
-            System.out.println("3 - Encerrar jogo");
-            System.out.print("Escolha uma opcao: ");
+            System.out.println("|    * JOGO 21 *    |");
+            System.out.println("  1 - Virar carta");
+            System.out.println("  2 - Parar partida");
+            System.out.println("  3 - Encerrar jogo");
+            System.out.print("Escolha uma opção: ");
             opcao = teclado.nextInt();
 
             if (opcao == 1) {
-                // CORREÇÃO: Só inicializa a nova partida se o jogador de fato quiser jogar!
                 if (!partidaAtiva) {
                     gerarBaralho(baralho);
                     embaralharBaralho(baralho);
@@ -56,7 +55,7 @@ public class correcao {
                 int status = verificarFimPartida(somaCartas);
 
                 if (status == 1) {
-                    System.out.println("Você Venceu! (Exatamente 21 pontos)");
+                    System.out.println("Você Venceu! (21 pontos)");
                     moedas += 200;
                     partidasJogadas++;
                     partidasGanhadas++;
@@ -71,7 +70,6 @@ public class correcao {
                 }
 
             } else if (opcao == 2) {
-                // Proteção: Só permite parar se houver uma partida ativa rodando
                 if (partidaAtiva) {
                     partidasJogadas++;
                     int moedasGanhas = calcularMoedasParada(somaCartas);
@@ -92,19 +90,18 @@ public class correcao {
                 }
 
             } else if (opcao == 3) {
-                System.out.println("\nINFORMAÇÕES FINAIS DO JOGO:");
+                System.out.println("INFORMAÇÕES FINAIS DO JOGO:");
                 System.out.println("Quantidade de partidas jogadas: " + partidasJogadas);
                 System.out.println("Quantidade de partidas vencidas: " + partidasGanhadas);
                 System.out.println("Quantidade de partidas perdidas: " + partidasPerdidas);
                 System.out.println("Quantidade de vezes que conseguiu exatamente 21 pontos: " + conseguiu21);
                 System.out.println("Numero de moedas total acumulado: " + moedas);
-                System.out.println("Fim do jogo");
+                System.out.println("Fim");
             }
         }
         teclado.close();
     }
 
-    // --- Subprogramas mantidos idênticos aos seus (estão ótimos!) ---
     public static void gerarBaralho(int[] baralho) {
         int indice = 0;
         for (int valor = 1; valor <= 13; valor++) {
